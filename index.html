@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inga</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="video" autoplay muted playsinline>
+    <source src="./inga.mp4" type="video/mp4">
+    <source src="./inga.webm" type="video/webm">
+    <source src="./inga.mov" type="video/quicktime">
+    თქვენი ბრაუზერი ვიდეოს ვერ უკრავს.
+  </video>
+
+  <script>
+    const video = document.getElementById("video");
+
+    video.addEventListener("canplay", () => {
+      video.play().catch(() => {});
+    });
+
+    window.addEventListener("load", () => {
+      video.play().catch(() => {});
+    });
+  </script>
+
+</body>
+</html>
